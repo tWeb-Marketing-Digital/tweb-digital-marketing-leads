@@ -1,0 +1,6 @@
+services:
+  tweb.digital.marketing.leads.api:
+    image: ${DOCKER_REGISTRY-}twebdigitalmarketingleadsapi
+    build:
+      context: .
+      dockerfile: src/Tweb.Digital.Marketing.Leads.Api/Dockerfile
