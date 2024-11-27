@@ -1,6 +1,12 @@
 services:
-  tweb.digital.marketing.leads.api:
-    image: ${DOCKER_REGISTRY-}twebdigitalmarketingleadsapi
-    build:
-      context: .
-      dockerfile: src/Tweb.Digital.Marketing.Leads.Api/Dockerfile
+  db:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password 
+      MYSQL_DATABASE: digital_marketing       
+      MYSQL_USER: tweb               
+      MYSQL_PASSWORD: 123     
+    ports:
+      - "3306:3306" 

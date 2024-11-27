@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using Tweb.Digital.Marketing.Leads.Api.Controllers.Lead;
+using Tweb.Digital.Marketing.Leads.Api.Controllers.Lead.Request;
 using Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Enums;
 
 namespace Tweb.Digital.Marketing.Leads.Api.Validators
 {
-    public class LeadRequestValidator : AbstractValidator<LeadRequest>
+    public class LeadRequestValidator : AbstractValidator<CreateLeadRequest>
     {
         public LeadRequestValidator() 
         {

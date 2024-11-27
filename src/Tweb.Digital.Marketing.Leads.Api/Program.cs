@@ -1,4 +1,5 @@
 using Tweb.Digital.Marketing.Leads.Api.Extensions.MySql;
+using Tweb.Digital.Marketing.Leads.Api.Extensions.Services;
 using Tweb.Digital.Marketing.Leads.Api.Extensions.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +8,11 @@ builder.Services.AddControllers();
                 
 builder.Services.AddSwagger()
                 .AddValidation()
-                .GetConnectionStringMySql(builder.Configuration);
+                .GetConnectionStringMySql(builder.Configuration)
+                .AddServices();
 
 var app = builder.Build();
+
 
 app.UseSwagger();
 app.UseSwaggerUI(options =>
@@ -19,9 +22,13 @@ app.UseSwaggerUI(options =>
     options.RoutePrefix = "swagger";
     options.ConfigObject.AdditionalItems.Add("antiforgery", false); 
 });
-app.UseHttpsRedirection();
+
+app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+
 
 app.Run();
