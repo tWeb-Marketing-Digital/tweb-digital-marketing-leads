@@ -9,7 +9,7 @@ namespace Tweb.Digital.Marketing.Leads.Api.Extensions.MySql
         {
             services.AddDbContext<LeadsDbContext>(options =>
             {
-                options.UseMySql(configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 32)));
+                options.UseMySql(configuration.GetConnectionString("MysqlConnection"), new MySqlServerVersion(new Version(8, 0, 32)));
             });
 
             return services;

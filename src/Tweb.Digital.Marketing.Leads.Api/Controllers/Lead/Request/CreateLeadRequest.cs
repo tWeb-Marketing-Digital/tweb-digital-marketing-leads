@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Enums;
 
-namespace Tweb.Digital.Marketing.Leads.Api.Controllers.Lead
+namespace Tweb.Digital.Marketing.Leads.Api.Controllers.Lead.Request
 {
-    public class LeadRequest
+    public class CreateLeadRequest
     {
         [Required]
         public Guid Id { get; set; }
@@ -21,6 +21,6 @@ namespace Tweb.Digital.Marketing.Leads.Api.Controllers.Lead
         public string Source { get; set; }
 
         [Required]
-        public LeadChannel Channel { get; set; }      
+        public LeadChannel Channel { get; set; }
     }
 }

@@ -6,20 +6,14 @@ namespace Tweb.Digital.Marketing.Leads.Api.Infrastructure.Database
 {
     public class LeadsDbContext : DbContext
     {
-        public DbSet<DbLeadModel> Lead { get; set; }
-        public DbSet<DbLeadStatusHistoryModel> LeadStatusHistory { get; set; }
+        public DbSet<DbLeadModel> Lead { get; set; }     
         public DbSet<DbPersonModel> Person { get; set; }
-        public LeadsDbContext(DbContextOptions<LeadsDbContext> options) : base (options)
-        {
-        }
+        public LeadsDbContext(DbContextOptions<LeadsDbContext> options) : base (options)  { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new LeadModelConfiguration());
-            modelBuilder.ApplyConfiguration(new LeadStatusHistoryModelConfiguration());
-            modelBuilder.ApplyConfiguration(new PersonModelConfiguration());
-
-            
+            modelBuilder.ApplyConfiguration(new LeadModelConfiguration());         
+            modelBuilder.ApplyConfiguration(new PersonModelConfiguration());            
         }
     }
 }
