@@ -1,5 +1,4 @@
-﻿using Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Entities;
-using Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Enums;
+﻿using Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Enums;
 
 namespace Tweb.Digital.Marketing.Leads.Api.Infrastructure.Database.Models
 {

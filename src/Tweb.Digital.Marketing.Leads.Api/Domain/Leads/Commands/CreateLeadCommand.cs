@@ -1,4 +1,5 @@
 ﻿using Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Enums;
+using Tweb.Digital.Marketing.Leads.Api.Domain.Persons.Entities;
 
 namespace Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Commands
 {
@@ -8,7 +9,9 @@ namespace Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Commands
         public string PersonName { get; private set; }      
         public string Email { get; private set; }
         public string Phone { get; private set; }      
-        public string Source { get; private set; }        
+        public string Source { get; private set; }      
+        
+        public Guid PersonId { get; private set; }
         public LeadChannel Channel { get; private set; }
 
         public static CreateLeadCommand Create()
@@ -41,6 +44,12 @@ namespace Tweb.Digital.Marketing.Leads.Api.Domain.Leads.Commands
         public CreateLeadCommand WithChannel(LeadChannel channel)
         {
             Channel = channel;
+            return this;
+        }
+
+        public CreateLeadCommand WithPersonId(Guid personId)
+        {
+            PersonId = personId;
             return this;
         }
     }
