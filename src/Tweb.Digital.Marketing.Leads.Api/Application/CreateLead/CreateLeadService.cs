@@ -30,7 +30,7 @@ namespace Tweb.Digital.Marketing.Leads.Api.Application.CreateLead
 
             if (person is null)
             {
-                person = Person.Create(command.Name, command.Email, command.Phone);
+                person = Person.Create(command.PersonName, command.Email, command.Phone);
                 await _personRepository.AddAsync(person);
             }
 
